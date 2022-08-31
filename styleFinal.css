@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+html,
+body {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-image: url(https://i.imgur.com/4l1P7bz.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Ubuntu Mono', monospace;
+    color: antiquewhite;
+}
+
+* {
+    box-sizing: border-box;
+}
+    
+.page-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 15px 50px;
+    /* border-bottom: 2px solid antiquewhite; */
+}
+
+#nav-logo {
+    flex-basis: 50%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding: 0px;
+    position: relative;
+    text-align: left;
+    filter: brightness(1.5);
+    justify-content: flex-start;
+}
+
+#nav-links {
+    display: flex;
+    flex-basis: 50%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding-top: 5px;
+}
+
+#logo {
+    height: 75px;
+}
+.link-list{
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.link-item {
+    flex: 0 1 10%;
+    justify-content: flex-end;
+    padding-left: 20px;
+    font-size: 1.6rem;
+    list-style: none;
+    position: relative;
+}
+.link-item::after{
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 10%;
+    width: 0%;
+    border: 0;
+    transition: border-bottom .2s ease-in-out, width .2s ease-in-out;
+}
+.link-item:hover::after{
+    width: 90%;
+    border: 2px solid white;
+}
+.link-item a{
+    color: white;
+    text-decoration: none;
+   
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    flex-shrink: 0;
+    flex-grow: 1;
+    position: relative;
+}
+
+
+/* img.demo-shadow {
+    filter: drop-shadow(10px 10px 10px #A4BBFF);
+} */
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    padding-right: 10%;
+}
+
+.hero-text{
+    flex-basis: 60%;
+    flex-shrink: 1;
+    flex-grow: 0;
+    padding: 50px;
+}
+
+.hero-buttons {
+    flex-basis: 40%;
+    flex-shrink: 1;
+    flex-grow: 0;
+    padding: 50px;
+}
+
+.hero-text h2 {
+    color: rgba(222, 194, 37, .9);
+    text-shadow: 2px 2px 5px rgb(140, 120, 5);
+    margin: 0;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+}
+
+.expanding-box {
+    display: block;
+    margin: 5px;
+    border-top: 0px solid black;
+    border-bottom: 0px solid black;
+    border-right: 0px solid black;
+    height: 96px;
+    width: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: right;
+    color: white;
+    transition: width 1s, border ease-out .5s, border-top ease-out .5s, border-bottom ease-in-out .5s, border-right ease-in-out .5s, color ease-in .1s;
+}
+
+.expanding-box::after {
+    background-color: rgba(30, 30, 30, 0.1);
+    content: " ";
+    border-top: 0px solid rgb(255, 255, 255);
+    border-bottom: 0px solid rgb(255, 255, 255);
+    border-right: 0px solid rgb(255, 255, 255);
+    position: absolute;
+    top: -1px;
+    left: 35px;
+    height: 96px;
+    filter: 0;
+    width: 0px;
+    transition: width .3s, border ease-out .5s, border-top ease-out .5s, border-bottom ease-in-out .5s, border-right ease-in-out .2s, color ease-in 2s, filter ease-in-out 1s;
+    text-align: right;
+    color: rgb(0, 0, 0);
+    white-space: pre;
+    overflow: hidden;
+}
+
+.ebox1::after {
+    content: "The International Renewable Energy Agency (IRENA)\a is an intergovernmental organisation that supports countries\a in their transition to a sustainable energy future,\a and serves as the principal platform for\a international cooperation";
+}
+
+.ebox2::after {
+    content: "NRDC works to safeguard the earth,\aits people,\a its plants and animals,\a and the natural systems on which all life depends.";
+}
+
+.ebox3::after {
+    
+    content: "Renewable Energy Group is a global producer and supplier\a of renewable fuels like biodiesel and renewable diesel,\a renewable chemicals\a and other products.";
+}
+
+.expanding-box:hover::after {
+    
+    max-height: 96px;
+    width: 500px;
+    max-width: fit-content + 10px;
+    border-top: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-right: 2px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    filter: drop-shadow(5px 5px 13px rgba(255, 255, 255, 0.3));
+  
+}
+
+#image-fill {
+    display: inline-block;
+    position: absolute;
+    left: -50px;
+    top: -1px;
+    filter: brightness(1.5);
+}
+
+.hex1,
+.hex2,
+.hex3 {
+    cursor: pointer;
+    fill-opacity: 0.6;
+    stroke: rgb(255, 255, 255);
+    stroke-width: 5;
+    filter: 0;
+    transition: transform, fill-opacity, stroke-width, filter 1s;
+    transition-duration: .5s;
+}
+
+.hex1:hover,
+.hex2:hover,
+.hex3:hover {
+    fill-opacity: 1;
+    stroke: #ff0000;
+    stroke-width: 5;
+    filter: drop-shadow(5px 5px 13px rgba(255, 255, 255, 0.5));
+}
+
+.buttons-radial,
+.radial-top,
+.radial-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 100%;
+    margin: 50px;
+    justify-content: center;
+}
+.radial-top a,
+.radial-bottom a{
+    text-decoration: none;
+}
+.rad-image, .rad-text{
+    display: flex;
+    flex: 0 1 100%;
+    justify-content: center;
+}
+.rad{ 
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 20%;
+    margin: 50px; 
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    background: radial-gradient(circle, rgba(0,212,255,1) 10%, rgba(23,23,92,0.8) 44%, rgba(0,0,0,0.3) 100%);
+    border-radius: 20px;
+    transition: filter 1s ease-in-out, box-shadow 1.5s;
+}
+.rad img{
+    transform: translateY(-10px);
+    width: 85px;
+}
+.rad{
+    color: rgb(45, 45, 173);
+    text-shadow: 2px 2px 4px rgba(51, 51, 202, 0.8);
+}
+.rad2{
+    background: radial-gradient(circle, rgba(0,255,114,0.70) 10%, rgba(50,92,23,0.80) 44%, rgba(0,0,0,0.80) 100%);
+
+}
+.rad2 .rad-text{
+    color: rgb(0,255,114);
+    text-shadow: 1px 1px 4px rgba(0,255,114,.8);    
+}
+.rad4{
+    background: radial-gradient(circle, rgba(255,0,0,0.80) 5%, rgba(126,26,26,0.80) 40%, rgba(0,0,0,0.80) 98%);
+}
+.rad4  .rad-text{
+    color: rgba(255,0,0,0.80);
+    text-shadow: 2px 2px 4px rgb(126,26,26);
+}
+.rad5{
+    background: radial-gradient(circle, rgba(255,251,0,0.80) 5%, rgba(126,123,26,0.80) 40%, rgba(0,0,0,0.80) 98%);
+}
+.rad5  .rad-text{
+    color: rgba(255,251,0,0.80);
+    text-shadow: 2px 2px 4px rgba(126,123,26,0.80);
+}
+.rad:hover{
+    filter: brightness(1.5);
+    filter:drop-shadow(0px 0px 1vw rgba(4, 126, 249, 0.8));
+}
+.rad2:hover{
+    filter:drop-shadow(0px 0px 1vw rgba(0,255,114,.8));
+}
+.rad4:hover{
+    filter:drop-shadow(0px 0px 1vw rgba(255,0,0,0.8));
+}
+.rad5:hover{
+    filter:drop-shadow(0px 0px 1vw rgba(255,251,0,0.80));
+}
+
+#footer {
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    margin: 20px 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+}
+
+.item1, .item7 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: right;
+}
+.item1 img
+{
+    max-width: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.item4 img{
+    max-width: 50px;
+}
+
+.item6 {
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.item6 img{
+    max-width: 300px;
+}
+
+.item4, .item5 {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    text-align: right;
+
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+html, body{
+    padding: 0%;
+    margin: 0%;
+}
+body{
+    background-image: url(images/electrical-background-vector-128483\(3\).jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Ubuntu Mono', monospace;
+    color: antiquewhite;
+}
+* {
+    box-sizing: border-box;
+}
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.buttons-radial,
+.radial-top,
+.radial-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 100%;
+    margin: 50px;
+    justify-content: center;
+}
+.radial-top a,
+.radial-bottom a{
+    text-decoration: none;
+}
+.rad-image, .rad-text{
+    display: flex;
+    flex: 0 1 100%;
+    justify-content: center;
+}
+
+.rad{ 
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 20%;
+    margin: 50px; 
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    background: radial-gradient(circle, rgba(0,212,255,1) 10%, rgba(23,23,92,0.8) 44%, rgba(0,0,0,0.3) 100%);
+    border-radius: 20px;
+    transition: filter 1s ease-in-out, box-shadow 1.5s;
+}
+
+.rad img{
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes pulse{
+    from{
+        width: 75px;
+        margin-bottom: 0;
+        transform: translateY(0);
+    }
+    to{
+        width: 85px;
+        margin-bottom: -10px;
+        transform: translateY(-10px);
+    }
+    
+}
+
+
+.rad{
+    color: rgb(45, 45, 173);
+    text-shadow: 2px 2px 4px rgba(51, 51, 202, 0.8);
+}
+.rad2{
+    background: radial-gradient(circle, rgba(0,255,114,0.70) 10%, rgba(50,92,23,0.80) 44%, rgba(0,0,0,0.80) 100%);
+
+}
+.rad2 .rad-text{
+    color: rgb(0,255,114);
+    text-shadow: 1px 1px 4px rgba(0,255,114,.8);    
+}
+.rad4{
+    background: radial-gradient(circle, rgba(255,0,0,0.80) 5%, rgba(126,26,26,0.80) 40%, rgba(0,0,0,0.80) 98%);
+}
+.rad4  .rad-text{
+    color: rgba(255,0,0,0.80);
+    text-shadow: 2px 2px 4px rgb(126,26,26);
+}
+.rad5{
+    background: radial-gradient(circle, rgba(255,251,0,0.80) 5%, rgba(126,123,26,0.80) 40%, rgba(0,0,0,0.80) 98%);
+}
+.rad5  .rad-text{
+    color: rgba(255,251,0,0.80);
+    text-shadow: 2px 2px 4px rgba(126,123,26,0.80);
+}
+.rad:hover{
+    filter: brightness(1.5);
+    filter:drop-shadow(0px 0px 1vw rgba(4, 126, 249, 0.8));
+}
+.rad2:hover{
+    filter:drop-shadow(0px 0px 1vw rgba(0,255,114,.8));
+}
+.rad4:hover{
+    filter:drop-shadow(0px 0px 1vw rgba(255,0,0,0.8));
+}
+.rad5:hover{
+    filter:drop-shadow(0px 0px 1vw rgba(255,251,0,0.80));
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="buttons-radial">
+
+            <div class="radial-top">
+                <div class="rad rad1">
+                    <a href="#hydropower">
+                        <div class="rad-image"><img src="C:\Users\HP\Desktop\Lonestar\uDEMY\Projects\Css 201\images\Icons\water-services-icon-27546.png" alt=""></div>
+                        <div class="rad-text">Learn About Hydropower Energy</div>
+                     </a>
+                </div>
+                <div class="rad rad2">
+                    <a href="/">
+                        <div class="rad-image"><img src="../images/Icons/download-icon-biomass-131964752395497979_512.png" alt=""></div>
+                        <div class="rad-text">Learn About Biomass Energy</div>
+                    </a>
+                </div>
+                <div class="rad rad3">
+                    <a href="/">
+                        <div class="rad-image"><img src="C:\Users\HP\Desktop\Lonestar\uDEMY\Projects\Css 201\images\Icons\Weather.ico" alt=""></div>
+                        <div class="rad-text">Learn About Wind Energy</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="radial-bottom">
+                <div class="rad rad4">
+                    <a href="/">
+                        <div class="rad-image"><img src="C:\Users\HP\Desktop\Lonestar\uDEMY\Projects\Css 201\images\Icons\Power.png" alt=""></div>
+                        <div class="rad-text">Learn About Geothermal Energy</div>
+                    </a>
+                </div>
+                <div class="rad rad5">
+                    <a href="/">
+                        <div class="rad-image"><img src="C:\Users\HP\Desktop\Lonestar\uDEMY\Projects\Css 201\images\Icons\Sun.ico" alt=""></div>
+                        <div class="rad-text">Learn About Solar Energy</div>
+                    </a>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
